@@ -17,5 +17,9 @@ $(document).ready(function() {
     var inputtedLastName = $("input#new-last-name").val();
     var contact = new Contact(inputtedFirstName, inputtedLastName);
     $("ul#contacts").append("<li>" + contact.fullName() + "</li>");
+
+  //inputs are now blank
+   $("input#new-first-name").val("");
+   $("input#new-last-name").val("");
   });
 });
