@@ -16,10 +16,17 @@ $(document).ready(function() {
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
     var contact = new Contact(inputtedFirstName, inputtedLastName);
-    $("ul#contacts").append("<li>" + contact.fullName() + "</li>");
+    $("ul#contacts").append("<li><span class='contact'>" + contact.fullName() + "</span></li>");
 
   //inputs are now blank
    $("input#new-first-name").val("");
    $("input#new-last-name").val("");
+
+   $(".contact").last().click(function() {
+      $("#show-contact").show();
+      $("#show-contact h2").text(contact.fullName());
+      $(".first-name").text(contact.firstName);
+      $(".last-name").text(contact.lastName);
+    });
   });
 });
